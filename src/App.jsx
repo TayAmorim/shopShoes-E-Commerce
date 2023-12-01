@@ -1,12 +1,13 @@
-
+import { Separator } from "@radix-ui/themes";
+import Header from "./components/Header";
 
 function App() {
-
   return (
-    <>
-      <h1>Shop Shoes</h1>
-    </>
-  )
+    <div className="container mx-auto px-36">
+      <Header />
+      <Separator />
+    </div>
+  );
 }
 
-export default App
+export default App;
