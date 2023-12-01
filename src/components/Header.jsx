@@ -1,26 +1,27 @@
 import { ShoppingCart } from "@phosphor-icons/react";
 import AvatarImg from "../assets/avatar.jpg";
+import { NavLink } from "react-router-dom";
 
 function Header() {
   return (
     <header className="flex py-7 items-center">
       <h1 className="font-logo text-3xl">sneakers</h1>
       <nav className="flex gap-4 items-center text-Grayish-blue ml-14">
-        <a className="hover:text-black" href="#">
+        <NavLink
+          to="/"
+          end
+          className={({ isActive }) =>
+            isActive ? "text-black border-b-2 border-orange" : ""
+          }
+        >
           Collections
-        </a>
-        <a className="hover:text-black" href="#">
-          Men
-        </a>
-        <a className="hover:text-black" href="#">
-          Women
-        </a>
-        <a className="hover:text-black" href="#">
+        </NavLink>
+        <NavLink className="hover:text-black">Men</NavLink>
+        <NavLink className="hover:text-black">Women</NavLink>
+        <NavLink to="about" className="hover:text-black">
           About
-        </a>
-        <a className="hover:text-black" href="#">
-          Contact
-        </a>
+        </NavLink>
+        <NavLink className="hover:text-black">Contact</NavLink>
       </nav>
       <div className="flex gap-8 items-center ml-auto">
         <ShoppingCart size={22} className="fill-Grayish-blue" weight="bold" />
